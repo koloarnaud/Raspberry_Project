@@ -2,7 +2,7 @@
 var express = require("express")
 var bodyparser = require("body-parser")
 var mqtt = require("mqtt")
-var mysql = require('mysql');
+//var mysql = require('mysql');
 
 var kern = express() //Variable server
 
@@ -200,7 +200,7 @@ function Led4Off () {
   raspberry.publish('Kolo_topic2/State', 'OFF4')
 }
 
-function PutTime(T1, T2, T3, T4)
+/*function PutTime(T1, T2, T3, T4)
 {
 	conn.run('INSERT INTO temps(Tled1, Tled2, Tled3, Tled4) VALUES(?,?,?,?)', [T1, T2, T3, T4], function(err) {
    			 if (err) {
@@ -208,6 +208,6 @@ function PutTime(T1, T2, T3, T4)
     				}
     			console.log('A row has been inserted');
   			});
-}
+}*/
 
 kern.listen(55000) //Port pour ecouter les requetes HTTP
